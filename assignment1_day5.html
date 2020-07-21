@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+Enter any number:
+<input type="text" id="userinput" />
+<br>
+<input type ="button" onclick="addTo()" value="Add" />
+<br>
+<input type ="button" onclick="oddnum()" value="odd number" />
+<br>
+<input type ="button" onclick="cubenum1()" value="cube number" />
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+var myarr = [];
+function addTo() {
+   myarr.push(document.getElementById("userinput").value);
+   console.log(myarr);
+}
+
+function oddnum()
+{
+var odds = myarr.filter(n => n%2);
+document.getElementById("demo").innerHTML = odds;
+}
+
+function cubenum1()
+{
+	var odds = myarr.filter(n => n%2);
+	
+
+var txt = " ";
+for(var i = 0;i< odds.length;i++)
+{
+	txt = Math.pow(odds[i],3) + "  ";
+	console.log(txt);
+}
+
+}
+</script>
+
+</body>
+</html>
