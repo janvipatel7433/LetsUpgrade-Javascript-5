@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+class User {
+  constructor(name,age,email) {
+	this.name = name;
+	this.age = age;
+	this.email = email;
+  }
+  present() {
+    return "I am " + this.name + " my age is " + this.age + " my email id is " +this.email;
+  }
+}
+
+class Moderator extends User {
+  constructor(name,age,email,Add_coin, remove_coin) {
+    super(name,age,email);
+	
+	
+    this.Add_coin = Add_coin;
+	this.remove_coin = remove_coin;
+  }
+  show() {
+    return this.present() + ", i add " + this.Add_coin + " coins and i remove " + this.remove_coin + " coins";
+  }
+}
+
+
+class Admin extends Moderator {
+  constructor(name,age,email,Add_coin,remove_coin,Add_course, delete_course) {
+    super(name,age,email,Add_coin,remove_coin);
+    this.Add_course = Add_course;
+	this.delete_course = delete_course;
+  }
+  display() {
+    return this.show() + ", i add " + this.Add_course + " course and i delete " + this.delete_course;
+  }
+}
+
+a1 = new User("Jiyaa",20,"jiyaa1234@gmail.com");
+a2 = new Moderator("Jiyaa",20,"jiyaa1234@gmail",2000,1000);
+a3 = new Admin("Jiyaa",20,"jiyaa1234@gmail",2000,1000,"javascript","css");
+document.getElementById("demo").innerHTML = a1.present();
+document.getElementById("demo1").innerHTML = a2.show();
+document.getElementById("demo2").innerHTML = a3.display();
+
+</script>
+</body>
+</html>
